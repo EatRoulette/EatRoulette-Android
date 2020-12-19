@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EatRoulette</string>
+    <string name="title">EatRoulette</string>
+    <string name="roll">Roulette</string>
+    <string name="logout">Déconnection</string>
+    <string name="friendList">Amis</string>
+    <string name="restaurantlist">Restaurants</string>
+</resources>
