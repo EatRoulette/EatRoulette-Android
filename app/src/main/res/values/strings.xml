@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">EatRoulette</string>
+    <string name="title">EatRoulette</string>
+    <string name="roll">Roll</string>
+    <string name="logout">Sign out</string>
+    <string name="friendList">Friends</string>
+    <string name="restaurantlist">Restaurants</string>
 </resources>
