@@ -1,4 +1,4 @@
-package fr.esgi.eatroulette.connected.restaurants_list
+package fr.esgi.eatroulette.connected.restaurant.list
 
 import android.view.LayoutInflater
 import android.widget.TextView
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import fr.esgi.eatroulette.R
+import fr.esgi.eatroulette.connected.restaurant.Restaurant
 
 class RestaurantViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.restaurant_item, parent, false)),

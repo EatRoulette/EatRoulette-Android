@@ -3,7 +3,7 @@ package fr.esgi.eatroulette.connected.home_page
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import fr.esgi.eatroulette.R
-import fr.esgi.eatroulette.connected.restaurants_list.RestaurantListActivity
+import fr.esgi.eatroulette.connected.restaurant.list.RestaurantListActivity
 import kotlinx.android.synthetic.main.activity_home_page.*
 
 class HomePageActivity : AppCompatActivity() {

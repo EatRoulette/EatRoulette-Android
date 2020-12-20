@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".connected.restaurants_list.RestaurantListActivity">
+    tools:context=".connected.restaurant.list.RestaurantListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/restaurantList"

@@ -1,8 +1,9 @@
-package fr.esgi.eatroulette.connected.restaurants_list
+package fr.esgi.eatroulette.connected.restaurant.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import fr.esgi.eatroulette.connected.restaurant.Restaurant
 
 class RestaurantAdapter(
     private val restaurants: List<Restaurant>,

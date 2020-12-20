@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EatRoulette">
-        <activity android:name=".connected.restaurants_list.RestaurantListActivity"/>
+        <activity android:name=".connected.restaurant.detail.RestaurantDetailActivity"></activity>
+        <activity android:name=".connected.restaurant.list.RestaurantListActivity" />
         <activity android:name=".connected.home_page.HomePageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

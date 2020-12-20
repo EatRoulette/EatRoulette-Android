@@ -1,4 +1,4 @@
-package fr.esgi.eatroulette.connected.restaurants_list
+package fr.esgi.eatroulette.connected.restaurant.list
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,8 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.esgi.eatroulette.R
+import fr.esgi.eatroulette.connected.restaurant.Restaurant
+import fr.esgi.eatroulette.connected.restaurant.detail.RestaurantDetailActivity
 import kotlinx.android.synthetic.main.activity_restaurant_list.*
 
 class RestaurantListActivity : AppCompatActivity(),
@@ -45,6 +47,6 @@ class RestaurantListActivity : AppCompatActivity(),
     }
 
     override fun onRestaurantClicked(restaurant: Restaurant?) {
-        Log.d("InRestaurantList", restaurant.toString())
+        restaurant?.let { RestaurantDetailActivity.navigateTo(this, it) }
     }
 }
