@@ -1,5 +1,6 @@
 package fr.esgi.eatroulette.infrastructure
 
+import fr.esgi.eatroulette.BuildConfig
 import fr.esgi.eatroulette.connected.restaurant.Restaurant
 import fr.esgi.eatroulette.infrastructure.services.RestaurantService
 import retrofit2.Callback
@@ -10,9 +11,10 @@ object RestaurantRepository {
     private var apiService: RestaurantService? = null
 
     init {
-
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://whispering-cove-53853.herokuapp.com/")
+            .baseUrl(
+                BuildConfig.EATROLLAPIBASEURL
+            )
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
