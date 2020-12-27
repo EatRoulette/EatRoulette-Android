@@ -4,12 +4,19 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import fr.esgi.eatroulette.R
 import fr.esgi.eatroulette.connected.restaurant.Restaurant
 import fr.esgi.eatroulette.connected.restaurant.list.RestaurantListActivity
+import fr.esgi.eatroulette.infrastructure.ApiRepository
+import fr.esgi.eatroulette.infrastructure.User
 import kotlinx.android.synthetic.main.activity_restaurant_detail.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class RestaurantDetailActivity : AppCompatActivity() {
+class RestaurantDetailActivity : AppCompatActivity(), View.OnClickListener {
 
     companion object {
         fun navigateTo(context: Context, restaurant: Restaurant) {
@@ -29,5 +36,27 @@ class RestaurantDetailActivity : AppCompatActivity() {
         restauNameTextView?.text = restaurant?.name
         restauAddressTextView?.text =
             "${restaurant?.address} - ${restaurant?.city} ${restaurant?.postalCode}"
+
+        restauNameTextView?.setOnClickListener(this)
     }
+
+    override fun onClick(v: View?) {
+
+        ApiRepository.retrieveUser(object: Callback<User> {
+            override fun onFailure(call: Call<User>, t: Throwable)
+            {
+                Log.d("toto", "Error : ${t.message}")
+                restauNameTextView?.text = "Error : ${t.message}"
+            }
+
+            override fun onResponse(call: Call<User>, response: Response<User>)
+            {
+                Log.d("toto", "Code ${response.code()}, User = ${response.body()}")
+                restauNameTextView?.text = "Code ${response.code()}, User = ${response.body()}"
+            }
+
+        })
+    }
+
+
 }
