@@ -1,3 +1,5 @@
 package fr.esgi.eatroulette.connected.restaurant
 
-data class Type(val name: String)
+import java.io.Serializable
+
+data class Type(val name: String): Serializable
