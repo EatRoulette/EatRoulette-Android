@@ -4,17 +4,9 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import fr.esgi.eatroulette.R
 import fr.esgi.eatroulette.connected.restaurant.Restaurant
-import fr.esgi.eatroulette.connected.restaurant.list.RestaurantListActivity
-import fr.esgi.eatroulette.infrastructure.ApiRepository
-import fr.esgi.eatroulette.infrastructure.User
 import kotlinx.android.synthetic.main.activity_restaurant_detail.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class RestaurantDetailActivity : AppCompatActivity() {
 
@@ -37,7 +29,5 @@ class RestaurantDetailActivity : AppCompatActivity() {
         restauAddressTextView?.text =
             "${restaurant?.address} - ${restaurant?.city} ${restaurant?.postalCode}"
     }
-
-
 
 }

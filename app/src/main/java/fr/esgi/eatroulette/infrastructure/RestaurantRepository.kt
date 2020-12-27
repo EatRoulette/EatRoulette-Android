@@ -6,12 +6,11 @@ import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object ApiRepository
-{
+object RestaurantRepository {
     private var apiService: RestaurantService? = null
 
-    init
-    {
+    init {
+
         val retrofit = Retrofit.Builder()
             .baseUrl("https://whispering-cove-53853.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -20,13 +19,7 @@ object ApiRepository
         apiService = retrofit.create(RestaurantService::class.java)
     }
 
-    fun retrieveUser(callback: Callback<User>)
-    {
-        val call = apiService?.retrieveUser()
-        call?.enqueue(callback)
-    }
-
-    fun retrieveAllRestaurant(callback: Callback<List<Restaurant>>){
+    fun retrieveAllRestaurant(callback: Callback<List<Restaurant>>) {
         val call = apiService?.retrieveAllRestaurant()
         call?.enqueue(callback)
     }
