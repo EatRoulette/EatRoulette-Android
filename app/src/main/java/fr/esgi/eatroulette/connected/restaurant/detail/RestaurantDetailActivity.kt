@@ -16,7 +16,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RestaurantDetailActivity : AppCompatActivity(), View.OnClickListener {
+class RestaurantDetailActivity : AppCompatActivity() {
 
     companion object {
         fun navigateTo(context: Context, restaurant: Restaurant) {
@@ -36,27 +36,8 @@ class RestaurantDetailActivity : AppCompatActivity(), View.OnClickListener {
         restauNameTextView?.text = restaurant?.name
         restauAddressTextView?.text =
             "${restaurant?.address} - ${restaurant?.city} ${restaurant?.postalCode}"
-
-        restauNameTextView?.setOnClickListener(this)
     }
 
-    override fun onClick(v: View?) {
-
-        ApiRepository.retrieveUser(object: Callback<User> {
-            override fun onFailure(call: Call<User>, t: Throwable)
-            {
-                Log.d("toto", "Error : ${t.message}")
-                restauNameTextView?.text = "Error : ${t.message}"
-            }
-
-            override fun onResponse(call: Call<User>, response: Response<User>)
-            {
-                Log.d("toto", "Code ${response.code()}, User = ${response.body()}")
-                restauNameTextView?.text = "Code ${response.code()}, User = ${response.body()}"
-            }
-
-        })
-    }
 
 
 }

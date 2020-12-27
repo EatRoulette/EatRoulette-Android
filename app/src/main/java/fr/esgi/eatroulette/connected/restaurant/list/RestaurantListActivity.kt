@@ -35,7 +35,7 @@ class RestaurantListActivity : AppCompatActivity(),
 
     )
 
-    private var restaurants = listOf(
+    private var restaurants:List<Restaurant>? = listOf(
         Restaurant("Enjoy Sushi",  typeList,"3 rue Victor Hugo", "PARIS", "75008"),
         Restaurant("Mc Donald", typeList, "3 rue Victor Hugo", "PARIS", "75008"),
         Restaurant("Burger King", typeList,"3 rue Victor Hugo", "PARIS", "75008"),
@@ -56,39 +56,22 @@ class RestaurantListActivity : AppCompatActivity(),
         ApiRepository.retrieveAllRestaurant(object: Callback<List<Restaurant>> {
             override fun onFailure(call: Call<List<Restaurant>>, t: Throwable) {
                 Log.d("toto", "Error : ${t.message}")
-//                restauNameTextView?.text = "Error : ${t.message}"
             }
 
             override fun onResponse(
                 call: Call<List<Restaurant>>,
                 response: Response<List<Restaurant>>
             ) {
-                restaurants = response.body()!!
+                restaurants = response?.body()
                 Log.d("toto", "Code ${response.code()}, Restaurants = ${response.body()}")
-//                restauNameTextView?.text = "Code ${response.code()}, Restaurants = ${response.body()}"
+                restaurantList?.apply {
+                    layoutManager = LinearLayoutManager(this@RestaurantListActivity)
+                    adapter = restaurants?.let { RestaurantAdapter(it, this@RestaurantListActivity) }
+                }
             }
+
         })
 
-        restaurantList?.apply {
-            layoutManager = LinearLayoutManager(this@RestaurantListActivity)
-            adapter = RestaurantAdapter(restaurants, this@RestaurantListActivity)
-        }
-
-//        ApiRepository.retrieveAllRestaurant(object: Callback<List<Restaurant>> {
-//            override fun onFailure(call: Call<List<Restaurant>>, t: Throwable)
-//            {
-//                Log.d("toto", "Error : ${t.message}")
-////                restauNameTextView?.text = "Error : ${t.message}"
-//            }
-//
-//            override fun onResponse(call: Call<List<Restaurant>>, response: Response<List<Restaurant>>)
-//            {
-//                restaurants = response.body()!!
-//                Log.d("toto", "Code ${response.code()}, Restaurants = ${response.body()}")
-////                restauNameTextView?.text = "Code ${response.code()}, Restaurants = ${response.body()}"
-//            }
-
-//        });
 
     }
 
