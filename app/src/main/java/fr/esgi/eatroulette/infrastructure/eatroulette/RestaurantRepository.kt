@@ -1,8 +1,8 @@
-package fr.esgi.eatroulette.infrastructure
+package fr.esgi.eatroulette.infrastructure.eatroulette
 
 import fr.esgi.eatroulette.BuildConfig
 import fr.esgi.eatroulette.connected.restaurant.Restaurant
-import fr.esgi.eatroulette.infrastructure.services.RestaurantService
+import fr.esgi.eatroulette.infrastructure.eatroulette.services.RestaurantService
 import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -27,3 +27,5 @@ object RestaurantRepository {
     }
 
 }
+
+//https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyAOEsN4FdgWwmBXypW6kdcf5BQkuPIkBxI

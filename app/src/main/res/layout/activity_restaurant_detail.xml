@@ -10,20 +10,90 @@
         android:id="@+id/restauNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/restauAddressTextView"
+        android:textSize="@dimen/mainItemSize"
+        app:layout_constraintBottom_toTopOf="@id/restauTypes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Restaurant Name" />
 
     <TextView
+        android:id="@+id/restauTypes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/restauAllergens"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/restauNameTextView"
+        tools:text="Types : ..." />
+
+    <TextView
+        android:id="@+id/restauAllergens"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/restauCharacs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/restauTypes"
+        tools:text="Allergens : ..." />
+
+    <TextView
+        android:id="@+id/restauCharacs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/restauWebsite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/restauAllergens"
+        tools:text="Characteristics : ..." />
+
+    <TextView
+        android:id="@+id/restauWebsite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/restauAddressTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/restauCharacs"
+        tools:text="www.site.com" />
+
+    <TextView
         android:id="@+id/restauAddressTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/restauWebsite"
+        tools:text="Restaurant Address" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalGuideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".65" />
+
+    <Button
+        android:id="@+id/goToMapBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_on_map"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/restauNameTextView"
-        tools:text="Restaurant Address" />
+        app:layout_constraintTop_toBottomOf="@id/horizontalGuideline" />
+
+    <!--    <fragment-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:id="@+id/map"-->
+    <!--        tools:context=".MapsActivity"-->
+    <!--        android:name="com.google.android.gms.maps.SupportMapFragment" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
