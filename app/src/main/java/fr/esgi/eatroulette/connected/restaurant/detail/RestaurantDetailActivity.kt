@@ -5,18 +5,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.gson.Gson
 import com.google.gson.JsonObject
 import fr.esgi.eatroulette.R
 import fr.esgi.eatroulette.connected.restaurant.Restaurant
-import fr.esgi.eatroulette.connected.restaurant.list.RestaurantAdapter
 import fr.esgi.eatroulette.infrastructure.google.GeocoderRepository
 import kotlinx.android.synthetic.main.activity_restaurant_detail.*
-import kotlinx.android.synthetic.main.activity_restaurant_list.*
-import okhttp3.ResponseBody
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -77,11 +70,13 @@ class RestaurantDetailActivity : AppCompatActivity() {
         goToMapBtn?.setOnClickListener {
             this.lat?.let { it1 ->
                 lng?.let { it2 ->
-                    restaurant?.let { it3 ->
-                        MapsActivity.navigateTo(
-                            this,
-                            it3, it1, it2
-                        )
+                    restaurant?.name.let { it3 ->
+                        if (it3 != null) {
+                            MapsActivity.navigateTo(
+                                this,
+                                it3, it1, it2
+                            )
+                        }
                     }
                 }
             }
