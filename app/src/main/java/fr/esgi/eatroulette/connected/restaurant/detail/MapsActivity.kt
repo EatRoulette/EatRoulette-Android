@@ -12,19 +12,18 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import fr.esgi.eatroulette.R
-import fr.esgi.eatroulette.connected.restaurant.Restaurant
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
-    private var restaurant: Restaurant? = null
+    private var restaurant: String? = null
     private var lat: Double? = null
     private var lng: Double? = null
 
     companion object {
-        fun navigateTo(context: Context, restaurant: Restaurant, lat: Double, lng: Double) {
+        fun navigateTo(context: Context, restaurantName: String, lat: Double, lng: Double) {
             val intent = Intent(context, MapsActivity::class.java)
-            intent.putExtra("restaurant", restaurant)
+            intent.putExtra("restaurant", restaurantName)
             intent.putExtra("lat", lat)
             intent.putExtra("lng", lng)
             context.startActivity(intent)
@@ -35,7 +34,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        restaurant = intent?.getSerializableExtra("restaurant") as Restaurant?
+        restaurant = intent?.getSerializableExtra("restaurant") as String?
         lat = intent?.getDoubleExtra("lat", 0.0)
         lng = intent?.getDoubleExtra("lng", 0.0)
 
@@ -59,7 +58,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // Add a marker in Sydney and move the camera
         val restaurantMarker = this.lat?.let { this.lng?.let { it1 -> LatLng(it, it1) } }
         mMap.addMarker(restaurantMarker?.let {
-            MarkerOptions().position(it).title(this.restaurant?.name)
+            MarkerOptions().position(it).title(this.restaurant)
         })
         mMap.moveCamera(CameraUpdateFactory.newLatLng(restaurantMarker))
         mMap.setMinZoomPreference(15f)
