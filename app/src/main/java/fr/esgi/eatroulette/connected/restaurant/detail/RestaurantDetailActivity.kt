@@ -10,8 +10,6 @@ import fr.esgi.eatroulette.R
 import fr.esgi.eatroulette.connected.restaurant.Restaurant
 import fr.esgi.eatroulette.infrastructure.google.GeocoderRepository
 import kotlinx.android.synthetic.main.activity_restaurant_detail.*
-import okhttp3.ResponseBody
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
