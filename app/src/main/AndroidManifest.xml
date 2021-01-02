@@ -17,6 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EatRoulette">
+        <activity android:name=".connected.friend.list.FriendListActivity"/>
         <activity android:name=".connected.roll.RollActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
