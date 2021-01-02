@@ -10,6 +10,9 @@ import retrofit2.http.Query
 interface GeocoderService {
 
     @GET("geocode/json")
-    fun getLocationFromAddress(@Query(value="address", encoded = true) address: String, @Query(value="key") key: String): Call<JsonObject>
+    fun getLocationFromAddress(
+        @Query(value = "address", encoded = true) address: String,
+        @Query(value = "key") key: String
+    ): Call<JsonObject>
 
 }

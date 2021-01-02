@@ -11,23 +11,21 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object GeocoderRepository {
-        private var apiService: GeocoderService? = null
+    private var apiService: GeocoderService? = null
 
-        init {
-            val retrofit = Retrofit.Builder()
-                .baseUrl(
-                    BuildConfig.GOOGLEAPIBASEURL
-                )
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
+    init {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(
+                BuildConfig.GOOGLEAPIBASEURL
+            )
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
 
-            apiService = retrofit.create(GeocoderService::class.java)
-        }
+        apiService = retrofit.create(GeocoderService::class.java)
+    }
 
-        fun retrieveLocationFromAddress(address: String, callback: Callback<JsonObject>) {
-            Log.d("toto", "In")
-            val call = apiService?.getLocationFromAddress(address, BuildConfig.GOOGLEKEY)
-            Log.d("toto", "Call :" + call.toString())
-            call?.enqueue(callback)
-        }
+    fun retrieveLocationFromAddress(address: String, callback: Callback<JsonObject>) {
+        val call = apiService?.getLocationFromAddress(address, BuildConfig.GOOGLEKEY)
+        call?.enqueue(callback)
+    }
 }

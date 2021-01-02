@@ -75,10 +75,16 @@ class RestaurantDetailActivity : AppCompatActivity() {
         restauWebsite?.text = restaurant?.website
 
         goToMapBtn?.setOnClickListener {
-            this.lat?.let { it1 -> lng?.let { it2 -> restaurant?.let { it3 ->
-                MapsActivity.navigateTo(this,
-                    it3,it1, it2)
-            } } }
+            this.lat?.let { it1 ->
+                lng?.let { it2 ->
+                    restaurant?.let { it3 ->
+                        MapsActivity.navigateTo(
+                            this,
+                            it3, it1, it2
+                        )
+                    }
+                }
+            }
         }
 
         GeocoderRepository.retrieveLocationFromAddress(addressFull, object : Callback<JsonObject> {
@@ -89,7 +95,8 @@ class RestaurantDetailActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
                 val json = response.body()
-                val location = json?.get("results")?.asJsonArray?.get(0)?.asJsonObject?.getAsJsonObject("geometry")
+                val location =
+                    json?.get("results")?.asJsonArray?.get(0)?.asJsonObject?.getAsJsonObject("geometry")
                 lat = location?.asJsonObject?.getAsJsonObject("location")?.get("lat")?.asDouble
                 lng = location?.asJsonObject?.getAsJsonObject("location")?.get("lng")?.asDouble
                 Log.d("toto", "Loc = $lat $lng")

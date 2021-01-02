@@ -42,8 +42,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-
-
     }
 
     /**
@@ -60,7 +58,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // Add a marker in Sydney and move the camera
         val restaurantMarker = this.lat?.let { this.lng?.let { it1 -> LatLng(it, it1) } }
-        mMap.addMarker(restaurantMarker?.let { MarkerOptions().position(it).title(this.restaurant?.name) })
+        mMap.addMarker(restaurantMarker?.let {
+            MarkerOptions().position(it).title(this.restaurant?.name)
+        })
         mMap.moveCamera(CameraUpdateFactory.newLatLng(restaurantMarker))
         mMap.setMinZoomPreference(15f)
         mMap.setMaxZoomPreference(20f)
