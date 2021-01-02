@@ -1,4 +1,4 @@
-package fr.esgi.eatroulette.infrastructure.services
+package fr.esgi.eatroulette.infrastructure.eatroulette.services
 
 
 import fr.esgi.eatroulette.connected.restaurant.Restaurant

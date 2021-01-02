@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import fr.esgi.eatroulette.R
 import fr.esgi.eatroulette.connected.restaurant.Restaurant
 import fr.esgi.eatroulette.connected.restaurant.detail.RestaurantDetailActivity
-import fr.esgi.eatroulette.infrastructure.RestaurantRepository
+import fr.esgi.eatroulette.infrastructure.eatroulette.RestaurantRepository
 import kotlinx.android.synthetic.main.activity_restaurant_detail.*
 import kotlinx.android.synthetic.main.activity_restaurant_list.*
 import retrofit2.Call
