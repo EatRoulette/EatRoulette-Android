@@ -9,4 +9,7 @@
     <string name="loginHint">Identifiant</string>
     <string name="loginPassword">Mot de passe</string>
     <string name="loginValidate">Valider</string>
+    <string name="token">token</string>
+    <string name="errorMessage">Une erreur est survenue</string>
+    <string name="errorLoginMessage">Email et / ou mot de passe incorrect(s)</string>
 </resources>
