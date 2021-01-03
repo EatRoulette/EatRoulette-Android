@@ -5,4 +5,8 @@
     <string name="logout">Sign out</string>
     <string name="friendList">Friends</string>
     <string name="restaurantlist">Restaurants</string>
+    <string name="loginTitle">Connection</string>
+    <string name="loginHint">Login</string>
+    <string name="loginPassword">Password</string>
+    <string name="loginValidate">Validate</string>
 </resources>
