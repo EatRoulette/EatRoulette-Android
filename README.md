@@ -12,3 +12,9 @@ googleBaseApiUrl=https://maps.googleapis.com/maps/api/
 gooleKey=YOUR_API_KEY
 ```
 
+In the file app/src/debug/res/values/google_maps_api.xml, replace **YOUR_API_KEY** by your key :
+
+```xml
+<string name="google_maps_key" ... >YOUR_API_KEY</string>
+```
+
