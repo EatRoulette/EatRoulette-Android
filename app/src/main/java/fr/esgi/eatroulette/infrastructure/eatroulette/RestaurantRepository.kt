@@ -4,7 +4,9 @@ import com.google.gson.JsonObject
 import fr.esgi.eatroulette.BuildConfig
 import fr.esgi.eatroulette.connected.restaurant.Restaurant
 import fr.esgi.eatroulette.connected.roll.Filter
+import fr.esgi.eatroulette.login.Login
 import fr.esgi.eatroulette.infrastructure.eatroulette.services.RestaurantService
+import fr.esgi.eatroulette.login.LoginResponse
 import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -36,4 +38,10 @@ object RestaurantRepository {
         val call = apiService?.rollRestaurant(filter)
         call?.enqueue(callback)
     }
+
+    fun login(email: String, password: String, callback: Callback<LoginResponse>) {
+        val call = apiService?.login(Login(email, password))
+        call?.enqueue(callback)
+    }
+
 }

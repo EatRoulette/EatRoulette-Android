@@ -5,10 +5,20 @@
     <string name="logout">Sign out</string>
     <string name="friendList">Friends</string>
     <string name="restaurantlist">Restaurants</string>
+
     <string name="noCharacs">No characteristics</string>
     <string name="noTypes">No types</string>
     <string name="noAllergens">No allergens</string>
     <string name="title_activity_maps">Map</string>
     <string name="view_on_map">View on Map</string>
     <string name="re_roll">Re roll</string>
+
+    <string name="loginTitle">Connection</string>
+    <string name="loginHint">Login</string>
+    <string name="loginPassword">Password</string>
+    <string name="loginValidate">Validate</string>
+    <string name="token">token</string>
+    <string name="errorMessage">An error occurred</string>
+    <string name="errorLoginMessage">Wrong Email and / or password</string>
+
 </resources>
