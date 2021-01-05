@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.google.gson.JsonObject
+import fr.esgi.eatroulette.MainActivity
 import fr.esgi.eatroulette.R
 import fr.esgi.eatroulette.connected.restaurant.detail.MapsActivity
 import fr.esgi.eatroulette.infrastructure.eatroulette.RestaurantRepository
 import fr.esgi.eatroulette.infrastructure.google.GeocoderRepository
+import fr.esgi.eatroulette.utils.Util
 import kotlinx.android.synthetic.main.activity_roll.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -32,6 +34,10 @@ class RollActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_roll)
+
+        if (!Util.isOnline()) {
+            MainActivity.navigateTo(this)
+        }
 
         roll()
 

@@ -20,5 +20,6 @@
     <string name="token">token</string>
     <string name="errorMessage">An error occurred</string>
     <string name="errorLoginMessage">Wrong Email and / or password</string>
+    <string name="errorNoConnection">Please check your internet connection</string>
 
 </resources>

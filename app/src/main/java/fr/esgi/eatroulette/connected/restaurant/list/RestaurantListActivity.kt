@@ -7,10 +7,12 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import fr.esgi.eatroulette.MainActivity
 import fr.esgi.eatroulette.R
 import fr.esgi.eatroulette.connected.restaurant.Restaurant
 import fr.esgi.eatroulette.connected.restaurant.detail.RestaurantDetailActivity
 import fr.esgi.eatroulette.infrastructure.eatroulette.RestaurantRepository
+import fr.esgi.eatroulette.utils.Util
 import kotlinx.android.synthetic.main.activity_restaurant_detail.*
 import kotlinx.android.synthetic.main.activity_restaurant_list.*
 import retrofit2.Call
@@ -33,6 +35,10 @@ class RestaurantListActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant_list)
+
+        if (!Util.isOnline()) {
+            MainActivity.navigateTo(this)
+        }
 
         loadData()
 
