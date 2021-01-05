@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.google.gson.JsonObject
+import fr.esgi.eatroulette.MainActivity
 import fr.esgi.eatroulette.R
 import fr.esgi.eatroulette.connected.restaurant.Restaurant
 import fr.esgi.eatroulette.infrastructure.google.GeocoderRepository
+import fr.esgi.eatroulette.utils.Util
 import kotlinx.android.synthetic.main.activity_restaurant_detail.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -29,6 +31,10 @@ class RestaurantDetailActivity : AppCompatActivity() {
     private var lng: Double? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        if (!Util.isOnline()) {
+            MainActivity.navigateTo(this)
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant_detail)
         restaurant = intent?.getSerializableExtra("restaurant") as Restaurant?

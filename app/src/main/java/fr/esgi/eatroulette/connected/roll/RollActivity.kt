@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.google.gson.JsonObject
+import fr.esgi.eatroulette.MainActivity
 import fr.esgi.eatroulette.R
 import fr.esgi.eatroulette.connected.restaurant.detail.MapsActivity
 import fr.esgi.eatroulette.infrastructure.eatroulette.RestaurantRepository
 import fr.esgi.eatroulette.infrastructure.google.GeocoderRepository
+import fr.esgi.eatroulette.utils.Util
 import kotlinx.android.synthetic.main.activity_roll.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -20,6 +22,7 @@ class RollActivity : AppCompatActivity() {
     private var roll: Roll? = null
     private var lat: Double? = null
     private var lng: Double? = null
+    private var addressFull: String = ""
 
     companion object {
         fun navigateTo(context: Context) {
@@ -31,6 +34,10 @@ class RollActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_roll)
+
+        if (!Util.isOnline()) {
+            MainActivity.navigateTo(this)
+        }
 
         roll()
 
@@ -71,28 +78,36 @@ class RollActivity : AppCompatActivity() {
                         it.get("postalCode").asString
                     )
                 }
-            }
-        })
 
-        restauNameTextView?.text = roll?.name
-        restauTypes?.text = roll?.type
-        val addressFull = "${roll?.address} ${roll?.postalCode} ${roll?.city}"
-        restauAddressTextView?.text = addressFull
-        restauWebsite?.text = roll?.website
+                restauNameTextView?.text = roll?.name
+                restauTypes?.text = roll?.type
+                addressFull = "${roll?.address} ${roll?.postalCode} ${roll?.city}"
+                restauAddressTextView?.text = addressFull
+                restauWebsite?.text = roll?.website
 
-        GeocoderRepository.retrieveLocationFromAddress(addressFull, object : Callback<JsonObject> {
-            override fun onFailure(call: Call<JsonObject>, t: Throwable) {
-                Log.d("toto", call.request().url().toString())
-                Log.d("toto", "Error : ${t.message}")
-            }
+                GeocoderRepository.retrieveLocationFromAddress(
+                    addressFull,
+                    object : Callback<JsonObject> {
+                        override fun onFailure(call: Call<JsonObject>, t: Throwable) {
+                            Log.d("toto", "Error : ${t.message}")
+                        }
 
-            override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
-                val json = response.body()
-                val location =
-                    json?.get("results")?.asJsonArray?.get(0)?.asJsonObject?.getAsJsonObject("geometry")
-                lat = location?.asJsonObject?.getAsJsonObject("location")?.get("lat")?.asDouble
-                lng = location?.asJsonObject?.getAsJsonObject("location")?.get("lng")?.asDouble
-                Log.d("toto", "Loc = $lat $lng")
+                        override fun onResponse(
+                            call: Call<JsonObject>,
+                            response: Response<JsonObject>
+                        ) {
+                            val json = response.body()
+                            val location =
+                                json?.get("results")?.asJsonArray?.get(0)?.asJsonObject?.getAsJsonObject(
+                                    "geometry"
+                                )
+                            lat = location?.asJsonObject?.getAsJsonObject("location")
+                                ?.get("lat")?.asDouble
+                            lng = location?.asJsonObject?.getAsJsonObject("location")
+                                ?.get("lng")?.asDouble
+                            Log.d("toto", "Loc = $lat $lng")
+                        }
+                    })
             }
         })
     }
