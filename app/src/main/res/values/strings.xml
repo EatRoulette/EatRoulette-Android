@@ -28,6 +28,7 @@
     <string name="firstNameHint">First Name</string>
     <string name="addressHint">Address</string>
     <string name="cityHint">City</string>
+    <string name="emailHint">Email</string>
     <string name="postalCodeHint">Postal Code</string>
     <string name="phoneHint">Phone</string>
     <string name="fillEverything">Please fill all the fields</string>
@@ -35,5 +36,6 @@
     <string name="wrongEmail">Wrong email</string>
     <string name="wrongPhone">Wrong phone</string>
     <string name="wrongPostalCode">Wrong Postal Code</string>
+    <string name="errorRegisterMessage">Register failed</string>
 
 </resources>

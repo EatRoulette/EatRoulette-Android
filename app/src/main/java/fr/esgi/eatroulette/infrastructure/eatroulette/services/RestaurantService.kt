@@ -6,6 +6,8 @@ import fr.esgi.eatroulette.connected.restaurant.Restaurant
 import fr.esgi.eatroulette.connected.roll.Filter
 import fr.esgi.eatroulette.login.Login
 import fr.esgi.eatroulette.login.LoginResponse
+import fr.esgi.eatroulette.register.Register
+import fr.esgi.eatroulette.register.RegisterResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -20,6 +22,13 @@ interface RestaurantService {
     @Headers("Content-Type: application/json")
     @POST("restaurant/rand")
     fun rollRestaurant(@Body body: Filter): Call<JsonObject>
+
+    /**
+     * Return user
+     */
+    @POST("auth/subscribe")
+    @Headers("Content-Type: application/json;charset=UTF-8")
+    fun register(@Body body: Register): Call<RegisterResponse>
 
     /**
      * Return connection token

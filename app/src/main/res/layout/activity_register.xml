@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/firstName"
-        android:hint="@string/loginHint" />
+        android:hint="@string/emailHint" />
 
     <EditText
         android:id="@+id/password"
@@ -106,7 +106,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/postalCodeHint"
-        android:inputType="textPassword"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/city"/>
