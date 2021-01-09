@@ -30,5 +30,10 @@
     <string name="cityHint">City</string>
     <string name="postalCodeHint">Postal Code</string>
     <string name="phoneHint">Phone</string>
+    <string name="fillEverything">Please fill all the fields</string>
+    <string name="passwordsDoNotMatch">Passwords do not match</string>
+    <string name="wrongEmail">Wrong email</string>
+    <string name="wrongPhone">Wrong phone</string>
+    <string name="wrongPostalCode">Wrong Postal Code</string>
 
 </resources>

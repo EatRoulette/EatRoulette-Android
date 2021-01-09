@@ -30,5 +30,10 @@
     <string name="cityHint">Ville</string>
     <string name="postalCodeHint">Code Postal</string>
     <string name="phoneHint">Téléphone</string>
+    <string name="fillEverything">Veuillez rempplir tous les champs</string>
+    <string name="passwordsDoNotMatch">Les mots de passe ne correspondent pas</string>
+    <string name="wrongEmail">Email erroné</string>
+    <string name="wrongPhone">Numéro de téléphone erroné</string>
+    <string name="wrongPostalCode">Code Postal erroné</string>
 
 </resources>
