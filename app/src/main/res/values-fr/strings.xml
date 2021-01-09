@@ -22,4 +22,13 @@
     <string name="errorLoginMessage">Email et / ou mot de passe incorrect(s)</string>
     <string name="errorNoConnection">Veuillez vérifier votre connexion internet</string>
 
+    <string name="registerTitle">Inscription</string>
+    <string name="passwordConfirmationHint">Confirmer le mot de passe</string>
+    <string name="lastNameHint">Nom</string>
+    <string name="firstNameHint">Prénom</string>
+    <string name="addressHint">Adresse</string>
+    <string name="cityHint">Ville</string>
+    <string name="postalCodeHint">Code Postal</string>
+    <string name="phoneHint">Téléphone</string>
+
 </resources>
