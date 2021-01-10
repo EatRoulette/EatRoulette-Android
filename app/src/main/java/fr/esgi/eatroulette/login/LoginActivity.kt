@@ -41,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
     private fun login(email: String, password: String) {;
         RestaurantRepository.login(email, password, object : Callback<LoginResponse> {
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                errorMessage.text = R.string.errorMessage.toString();
+                errorMessage.text = this@LoginActivity.getText(R.string.errorMessage);
                 Log.d("toto", "Error : ${t.message}")
             }
 
@@ -56,8 +56,7 @@ class LoginActivity : AppCompatActivity() {
                 val body: LoginResponse? = response.body()
                 if (response.code() != 401) {
                     if (body != null) {
-                        val sharedPref =
-                            this@LoginActivity.getPreferences(Context.MODE_PRIVATE) ?: return
+                        val sharedPref = this@LoginActivity.getPreferences(Context.MODE_PRIVATE) ?: return
                         with(sharedPref.edit()) {
                             putString(getString(R.string.token), body.token)
                             apply()

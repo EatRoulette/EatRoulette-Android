@@ -36,6 +36,7 @@
             android:name=".connected.restaurant.detail.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".login.LoginActivity" />
+        <activity android:name=".register.RegisterActivity" />
         <activity android:name=".connected.restaurant.detail.RestaurantDetailActivity" />
         <activity android:name=".connected.restaurant.list.RestaurantListActivity" />
         <activity android:name=".connected.home_page.HomePageActivity" />

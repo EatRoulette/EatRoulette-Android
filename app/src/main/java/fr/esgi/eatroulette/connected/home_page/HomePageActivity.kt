@@ -1,7 +1,7 @@
 package fr.esgi.eatroulette.connected.home_page
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import fr.esgi.eatroulette.MainActivity
 import fr.esgi.eatroulette.R
 import fr.esgi.eatroulette.connected.friend.list.FriendListActivity
@@ -9,6 +9,7 @@ import fr.esgi.eatroulette.connected.restaurant.list.RestaurantListActivity
 import fr.esgi.eatroulette.connected.roll.RollActivity
 import fr.esgi.eatroulette.utils.Util
 import kotlinx.android.synthetic.main.activity_home_page.*
+
 
 class HomePageActivity : AppCompatActivity() {
 
@@ -32,5 +33,11 @@ class HomePageActivity : AppCompatActivity() {
             FriendListActivity.navigateTo(this)
         }
 
+        logoutBtn?.setOnClickListener {
+            val preferences = getSharedPreferences("login.LoginActivity", 0)
+            preferences.edit().remove("token").apply()
+
+            MainActivity.navigateTo(this)
+        }
     }
 }
