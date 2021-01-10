@@ -56,8 +56,7 @@ class LoginActivity : AppCompatActivity() {
                 val body: LoginResponse? = response.body()
                 if (response.code() != 401) {
                     if (body != null) {
-                        val sharedPref =
-                            this@LoginActivity.getPreferences(Context.MODE_PRIVATE) ?: return
+                        val sharedPref = this@LoginActivity.getPreferences(Context.MODE_PRIVATE) ?: return
                         with(sharedPref.edit()) {
                             putString(getString(R.string.token), body.token)
                             apply()

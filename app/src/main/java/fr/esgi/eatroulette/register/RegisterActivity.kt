@@ -1,20 +1,16 @@
 package fr.esgi.eatroulette.register
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.util.Patterns
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.text.isDigitsOnly
+import fr.esgi.eatroulette.MainActivity
 import fr.esgi.eatroulette.R
-import fr.esgi.eatroulette.connected.home_page.HomePageActivity
 import fr.esgi.eatroulette.infrastructure.eatroulette.RestaurantRepository
 import fr.esgi.eatroulette.login.LoginActivity
-import fr.esgi.eatroulette.login.LoginResponse
+import fr.esgi.eatroulette.utils.Util
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.activity_register.email
@@ -30,6 +26,11 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        if (!Util.isOnline()) {
+            MainActivity.navigateTo(this)
+        }
+
         validate.setOnClickListener {
             if (validateData()) {
                 register()
