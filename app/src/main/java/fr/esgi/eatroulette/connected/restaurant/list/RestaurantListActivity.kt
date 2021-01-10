@@ -56,7 +56,7 @@ class RestaurantListActivity : AppCompatActivity(),
     private fun loadData() {
         RestaurantRepository.retrieveAllRestaurant(object : Callback<List<Restaurant>> {
             override fun onFailure(call: Call<List<Restaurant>>, t: Throwable) {
-                Log.d("toto", "Error : ${t.message}")
+                Log.d("eatRoll-restaurantlist", "Error : ${t.message}")
             }
 
             override fun onResponse(
@@ -64,7 +64,7 @@ class RestaurantListActivity : AppCompatActivity(),
                 response: Response<List<Restaurant>>
             ) {
                 restaurants = response.body()
-                Log.d("toto", "Code ${response.code()}, Restaurants = ${response.body()}")
+                Log.d("eatRoll-restaurantlist", "Code ${response.code()}, Restaurants = ${response.body()}")
                 restaurantList?.apply {
                     layoutManager = LinearLayoutManager(this@RestaurantListActivity)
                     adapter =

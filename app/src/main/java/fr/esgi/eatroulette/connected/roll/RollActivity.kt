@@ -62,7 +62,7 @@ class RollActivity : AppCompatActivity() {
     fun roll() {
         RestaurantRepository.rollRestaurant(object : Callback<JsonObject> {
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
-                Log.d("toto", "Error : ${t.message}")
+                Log.d("eatRoll-roll", "Error : ${t.message}")
             }
 
             override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
@@ -89,7 +89,7 @@ class RollActivity : AppCompatActivity() {
                     addressFull,
                     object : Callback<JsonObject> {
                         override fun onFailure(call: Call<JsonObject>, t: Throwable) {
-                            Log.d("toto", "Error : ${t.message}")
+                            Log.d("eatRoll-roll", "Error : ${t.message}")
                         }
 
                         override fun onResponse(
@@ -105,7 +105,7 @@ class RollActivity : AppCompatActivity() {
                                 ?.get("lat")?.asDouble
                             lng = location?.asJsonObject?.getAsJsonObject("location")
                                 ?.get("lng")?.asDouble
-                            Log.d("toto", "Loc = $lat $lng")
+                            Log.d("eatRoll-roll", "Loc = $lat $lng")
                         }
                     })
             }

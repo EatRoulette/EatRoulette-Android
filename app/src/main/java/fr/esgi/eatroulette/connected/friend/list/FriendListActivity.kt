@@ -43,6 +43,6 @@ class FriendListActivity : AppCompatActivity(), FriendViewHolder.OnUserClickedLi
     }
 
     override fun onUserClicked(user: User?) {
-        Log.d("toto", user.toString())
+        Log.d("eatRoll-user", user.toString())
     }
 }

@@ -97,7 +97,7 @@ class RegisterActivity : AppCompatActivity() {
         RestaurantRepository.register(data, object : Callback<RegisterResponse> {
             override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
                 errorMessage.text = this@RegisterActivity.getText(R.string.errorMessage);
-                Log.d("toto", "Error : ${t.message}")
+                Log.d("eatRoll-registry", "Error : ${t.message}")
             }
 
             override fun onResponse(
@@ -105,8 +105,8 @@ class RegisterActivity : AppCompatActivity() {
                 response: Response<RegisterResponse>
             ) {
                 Log.d(
-                    "toto",
-                    "Code ${response.code()}, body = ${response.body()}, message = ${response.message()}"
+                    "eatRoll-registry",
+                    "Code ${response.code()}, body = Token(XXXXXX), message = ${response.message()}"
                 )
                 val body: RegisterResponse? = response.body()
                 if (response.code() != 409) {
