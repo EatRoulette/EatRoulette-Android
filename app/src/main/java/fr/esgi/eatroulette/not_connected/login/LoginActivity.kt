@@ -1,4 +1,4 @@
-package fr.esgi.eatroulette.login
+package fr.esgi.eatroulette.not_connected.login
 
 import android.content.Context
 import android.content.Intent
@@ -42,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
         RestaurantRepository.login(email, password, object : Callback<LoginResponse> {
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 errorMessage.text = this@LoginActivity.getText(R.string.errorMessage);
-                Log.d("toto", "Error : ${t.message}")
+                Log.d("eatRoll-login", "Error : ${t.message}")
             }
 
             override fun onResponse(
@@ -50,8 +50,8 @@ class LoginActivity : AppCompatActivity() {
                 response: Response<LoginResponse>
             ) {
                 Log.d(
-                    "toto",
-                    "Code ${response.code()}, body = ${response.body()}, message = ${response.message()}"
+                    "eatRoll-login",
+                    "Code ${response.code()}, body = Token(XXXX), message = ${response.message()}"
                 )
                 val body: LoginResponse? = response.body()
                 if (response.code() != 401) {

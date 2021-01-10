@@ -12,9 +12,9 @@ object Util {
             val exitValue = ipProcess.waitFor()
             return exitValue == 0
         } catch (e: IOException) {
-            Log.e("toto", e.printStackTrace().toString())
+            Log.e("eatRoll-connection", e.printStackTrace().toString())
         } catch (e: InterruptedException) {
-            Log.e("toto", e.printStackTrace().toString())
+            Log.e("eatRoll-connection", e.printStackTrace().toString())
         }
         return false
     }

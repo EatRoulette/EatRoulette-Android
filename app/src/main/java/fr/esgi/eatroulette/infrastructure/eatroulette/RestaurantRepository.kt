@@ -4,11 +4,11 @@ import com.google.gson.JsonObject
 import fr.esgi.eatroulette.BuildConfig
 import fr.esgi.eatroulette.connected.restaurant.Restaurant
 import fr.esgi.eatroulette.connected.roll.Filter
-import fr.esgi.eatroulette.login.Login
+import fr.esgi.eatroulette.not_connected.login.Login
 import fr.esgi.eatroulette.infrastructure.eatroulette.services.RestaurantService
-import fr.esgi.eatroulette.login.LoginResponse
-import fr.esgi.eatroulette.register.Register
-import fr.esgi.eatroulette.register.RegisterResponse
+import fr.esgi.eatroulette.not_connected.login.LoginResponse
+import fr.esgi.eatroulette.not_connected.register.Register
+import fr.esgi.eatroulette.not_connected.register.RegisterResponse
 import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

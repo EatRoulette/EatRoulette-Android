@@ -4,10 +4,10 @@ package fr.esgi.eatroulette.infrastructure.eatroulette.services
 import com.google.gson.JsonObject
 import fr.esgi.eatroulette.connected.restaurant.Restaurant
 import fr.esgi.eatroulette.connected.roll.Filter
-import fr.esgi.eatroulette.login.Login
-import fr.esgi.eatroulette.login.LoginResponse
-import fr.esgi.eatroulette.register.Register
-import fr.esgi.eatroulette.register.RegisterResponse
+import fr.esgi.eatroulette.not_connected.login.Login
+import fr.esgi.eatroulette.not_connected.login.LoginResponse
+import fr.esgi.eatroulette.not_connected.register.Register
+import fr.esgi.eatroulette.not_connected.register.RegisterResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET

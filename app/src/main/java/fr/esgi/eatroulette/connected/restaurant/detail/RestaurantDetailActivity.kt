@@ -90,8 +90,8 @@ class RestaurantDetailActivity : AppCompatActivity() {
 
         GeocoderRepository.retrieveLocationFromAddress(addressFull, object : Callback<JsonObject> {
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
-                Log.d("toto", call.request().url().toString())
-                Log.d("toto", "Error : ${t.message}")
+                Log.d("eatRoll-restaudetail", call.request().url().toString())
+                Log.d("eatRoll-restaudetail", "Error : ${t.message}")
             }
 
             override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
