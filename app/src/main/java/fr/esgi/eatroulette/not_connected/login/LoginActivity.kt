@@ -1,4 +1,4 @@
-package fr.esgi.eatroulette.login
+package fr.esgi.eatroulette.not_connected.login
 
 import android.content.Context
 import android.content.Intent

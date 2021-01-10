@@ -1,4 +1,4 @@
-package fr.esgi.eatroulette.register
+package fr.esgi.eatroulette.not_connected.register
 
 import java.io.Serializable
 

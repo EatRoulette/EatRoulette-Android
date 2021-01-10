@@ -4,8 +4,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import fr.esgi.eatroulette.login.LoginActivity
-import fr.esgi.eatroulette.register.RegisterActivity
+import fr.esgi.eatroulette.not_connected.login.LoginActivity
+import fr.esgi.eatroulette.not_connected.register.RegisterActivity
 import fr.esgi.eatroulette.utils.Util
 import kotlinx.android.synthetic.main.activity_main.*
 

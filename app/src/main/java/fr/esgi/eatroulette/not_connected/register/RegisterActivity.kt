@@ -1,4 +1,4 @@
-package fr.esgi.eatroulette.register
+package fr.esgi.eatroulette.not_connected.register
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import fr.esgi.eatroulette.MainActivity
 import fr.esgi.eatroulette.R
 import fr.esgi.eatroulette.infrastructure.eatroulette.RestaurantRepository
-import fr.esgi.eatroulette.login.LoginActivity
+import fr.esgi.eatroulette.not_connected.login.LoginActivity
 import fr.esgi.eatroulette.utils.Util
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
