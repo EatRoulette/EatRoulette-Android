@@ -8,7 +8,7 @@ import android.util.Log
 import androidx.core.view.isVisible
 import fr.esgi.eatroulette.R
 import fr.esgi.eatroulette.connected.home_page.HomePageActivity
-import fr.esgi.eatroulette.infrastructure.eatroulette.RestaurantRepository
+import fr.esgi.eatroulette.infrastructure.eatroulette.EatRouletteRepository
 import fr.esgi.eatroulette.utils.Util
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_restaurant_list.*
@@ -39,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login(email: String, password: String) {;
-        RestaurantRepository.login(email, password, object : Callback<LoginResponse> {
+        EatRouletteRepository.login(email, password, object : Callback<LoginResponse> {
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 errorMessage.text = this@LoginActivity.getText(R.string.errorMessage);
                 Log.d("eatRoll-login", "Error : ${t.message}")

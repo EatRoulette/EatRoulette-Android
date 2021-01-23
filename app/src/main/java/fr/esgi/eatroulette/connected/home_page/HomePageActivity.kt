@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import fr.esgi.eatroulette.MainActivity
 import fr.esgi.eatroulette.R
-import fr.esgi.eatroulette.connected.friend.list.FriendListActivity
 import fr.esgi.eatroulette.connected.restaurant.list.RestaurantListActivity
 import fr.esgi.eatroulette.connected.roll.RollActivity
 import fr.esgi.eatroulette.utils.Util
@@ -27,10 +26,6 @@ class HomePageActivity : AppCompatActivity() {
 
         rollBtn?.setOnClickListener {
             RollActivity.navigateTo(this)
-        }
-
-        friendListBtn?.setOnClickListener {
-            FriendListActivity.navigateTo(this)
         }
 
         logoutBtn?.setOnClickListener {
