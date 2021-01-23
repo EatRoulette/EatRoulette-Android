@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        // TODO if token exists (connected) navigate directly to home page
         if (!Util.isOnline()) {
             connectionIssue?.text = resources?.getString(R.string.errorNoConnection)
         }

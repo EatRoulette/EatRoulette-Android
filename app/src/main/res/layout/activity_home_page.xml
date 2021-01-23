@@ -176,7 +176,7 @@
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:layout_marginStart="10dp"
-                    android:src="@drawable/wc"
+                    android:src="@drawable/logout"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
