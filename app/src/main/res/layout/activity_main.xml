@@ -47,7 +47,7 @@
                 android:layout_width="115dp"
                 android:layout_height="115dp"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/logo"
+                android:src="@drawable/register"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -86,7 +86,7 @@
                 android:layout_width="115dp"
                 android:layout_height="115dp"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/logo"
+                android:src="@drawable/login"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
