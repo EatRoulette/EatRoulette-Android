@@ -9,7 +9,7 @@ import com.google.gson.JsonObject
 import fr.esgi.eatroulette.MainActivity
 import fr.esgi.eatroulette.R
 import fr.esgi.eatroulette.connected.restaurant.detail.MapsActivity
-import fr.esgi.eatroulette.infrastructure.eatroulette.RestaurantRepository
+import fr.esgi.eatroulette.infrastructure.eatroulette.EatRouletteRepository
 import fr.esgi.eatroulette.infrastructure.google.GeocoderRepository
 import fr.esgi.eatroulette.utils.Util
 import kotlinx.android.synthetic.main.activity_roll.*
@@ -60,7 +60,7 @@ class RollActivity : AppCompatActivity() {
     }
 
     fun roll() {
-        RestaurantRepository.rollRestaurant(object : Callback<JsonObject> {
+        EatRouletteRepository.rollRestaurant(object : Callback<JsonObject> {
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
                 Log.d("eatRoll-roll", "Error : ${t.message}")
             }

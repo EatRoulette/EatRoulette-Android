@@ -8,15 +8,10 @@ import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
 import fr.esgi.eatroulette.MainActivity
 import fr.esgi.eatroulette.R
-import fr.esgi.eatroulette.infrastructure.eatroulette.RestaurantRepository
+import fr.esgi.eatroulette.infrastructure.eatroulette.EatRouletteRepository
 import fr.esgi.eatroulette.not_connected.login.LoginActivity
 import fr.esgi.eatroulette.utils.Util
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.android.synthetic.main.activity_register.email
-import kotlinx.android.synthetic.main.activity_register.errorMessage
-import kotlinx.android.synthetic.main.activity_register.password
-import kotlinx.android.synthetic.main.activity_register.validate
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -94,7 +89,7 @@ class RegisterActivity : AppCompatActivity() {
             address.text.toString(), postalCode.text.toString(), phone.text.toString(),
             email.text.toString(), password.text.toString(), "user"
         )
-        RestaurantRepository.register(data, object : Callback<RegisterResponse> {
+        EatRouletteRepository.register(data, object : Callback<RegisterResponse> {
             override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
                 errorMessage.text = this@RegisterActivity.getText(R.string.errorMessage);
                 Log.d("eatRoll-registry", "Error : ${t.message}")
