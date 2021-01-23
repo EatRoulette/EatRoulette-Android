@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import fr.esgi.eatroulette.connected.home_page.HomePageActivity
 import fr.esgi.eatroulette.not_connected.login.LoginActivity
 import fr.esgi.eatroulette.not_connected.register.RegisterActivity
 import fr.esgi.eatroulette.utils.Util
@@ -30,7 +32,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // TODO if token exists (connected) navigate directly to home page
+        val sharedPref = this@MainActivity.getPreferences(Context.MODE_PRIVATE) ?: return
+        val token = sharedPref.getString(getString(R.string.token), "")
+        if(token !== null && token != "" ){
+            val intent = Intent(this@MainActivity, HomePageActivity::class.java)
+            this@MainActivity.startActivity(intent)
+        }
+
         if (!Util.isOnline()) {
             connectionIssue?.text = resources?.getString(R.string.errorNoConnection)
         }

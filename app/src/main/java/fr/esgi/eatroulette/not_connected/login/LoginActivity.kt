@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        if (Util.isOnline()) {
+        //if (Util.isOnline()) {
             validate?.setOnClickListener {
                 val emailStr: String = email.text.toString();
                 val passwordStr: String = password.text.toString();
@@ -29,12 +29,12 @@ class LoginActivity : AppCompatActivity() {
                 // todo else  :
                 login(emailStr, passwordStr);
             }
-        } else {
+        /*} else {
             email?.isVisible = false
             password?.isVisible = false
             validate?.isVisible = false
             errorMessage?.text = resources?.getString(R.string.errorNoConnection)
-        }
+        }*/
 
     }
 
