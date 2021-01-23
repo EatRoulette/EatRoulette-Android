@@ -2,7 +2,7 @@
 <resources>
     <dimen name="padding">20dp</dimen>
     <dimen name="titleTextSize">24sp</dimen>
-    <dimen name="itemSize">125dp</dimen>
+    <dimen name="itemSize">95dp</dimen>
     <dimen name="mainItemSize">28sp</dimen>
-    <dimen name="subItemSize">20sp</dimen>
+    <dimen name="subItemSize">18sp</dimen>
 </resources>
