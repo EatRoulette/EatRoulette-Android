@@ -4,13 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:padding="20dp"
     tools:context=".connected.restaurant.detail.RestaurantDetailActivity">
-
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_vertical"
+        android:padding="30dp"
+        android:background="@drawable/background_rounded"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
     <TextView
         android:id="@+id/restauNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/mainItemSize"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@id/restauTypes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,6 +36,8 @@
         android:id="@+id/restauTypes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toTopOf="@id/restauWebsite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".15"
@@ -35,6 +52,7 @@
         app:layout_constraintBottom_toTopOf="@id/restauAddressTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".15"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/restauTypes"
         tools:text="www.site.com" />
@@ -47,6 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".15"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/restauWebsite"
         tools:text="Restaurant Address" />
 
@@ -61,6 +80,8 @@
         android:id="@+id/reRollBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
         app:layout_constraintBottom_toTopOf="@id/goToMapBtn"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/re_roll"
@@ -71,10 +92,12 @@
         android:id="@+id/goToMapBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="@string/view_on_map"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/reRollBtn" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

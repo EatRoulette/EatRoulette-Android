@@ -11,7 +11,9 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import fr.esgi.eatroulette.MainActivity
 import fr.esgi.eatroulette.R
+import fr.esgi.eatroulette.utils.Util
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -33,6 +35,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
+        if (!Util.isOnline()) {
+            MainActivity.navigateTo(this)
+        }
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         restaurant = intent?.getSerializableExtra("restaurant") as String?
         lat = intent?.getDoubleExtra("lat", 0.0)
