@@ -1,5 +1,6 @@
 package fr.esgi.eatroulette.connected.home_page
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import fr.esgi.eatroulette.MainActivity
@@ -16,9 +17,9 @@ class HomePageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
 
-        if (!Util.isOnline()) {
+        /*if (!Util.isOnline()) {
             MainActivity.navigateTo(this)
-        }
+        }*/
 
         restaurantListBtn?.setOnClickListener {
             RestaurantListActivity.navigateTo(this)
@@ -29,8 +30,8 @@ class HomePageActivity : AppCompatActivity() {
         }
 
         logoutBtn?.setOnClickListener {
-            val preferences = getSharedPreferences("login.LoginActivity", 0)
-            preferences.edit().remove("token").apply()
+            val preferences = getSharedPreferences("HomePageActivity", Context.MODE_PRIVATE)
+            preferences.edit().remove(getString(R.string.token)).apply()
 
             MainActivity.navigateTo(this)
         }
